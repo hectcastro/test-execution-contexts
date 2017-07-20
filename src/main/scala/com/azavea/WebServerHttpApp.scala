@@ -21,14 +21,18 @@ object WebServerHttpApp extends HttpApp with App {
       path("global") {
         get {
           complete {
-            Future { blockingOperation }
+            Future {
+              blockingOperation
+            }
           }
         }
       } ~
       path("default-dispatcher") {
         get {
           complete {
-            blocking { blockingOperation }
+            blocking {
+              blockingOperation
+            }
           }
         }
       } ~
@@ -37,7 +41,9 @@ object WebServerHttpApp extends HttpApp with App {
 
         get {
           complete {
-            Future { blockingOperation }
+            Future {
+              blockingOperation
+            }
           }
         }
       }
